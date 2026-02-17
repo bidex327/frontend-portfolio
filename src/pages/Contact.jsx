@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import api from "../api/axios";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -33,23 +33,22 @@ const Contact = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/api/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  const response = await api.post("/api/messages", formData);
 
-      const data = await response.json();
+  if (response.data.success) {
+    toast.success("Message sent successfully!");
+    setFormData({ name: "", email: "", message: "" });
+  } else {
+    toast.error("Failed to send message. Try again.");
+  }
+} catch (error) {
+  console.error(error);
+  toast.error(error.response?.data?.message || "Server error. Try again later.");
+}
 
-      if (data.success) {
-        toast.success("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        toast.error("Failed to send message. Try again.");
-      }
-    } catch (error) {
-      toast.error("Server error. Try again later.");
-    }
+
+
+
   };
 
   return (
