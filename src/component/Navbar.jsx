@@ -51,7 +51,7 @@ const Navbar = () => {
           </li>
         </ul>
 
-        
+{/*         
         <div className="hidden items-center gap-4 md:flex">
           <NavLink
             to="/login"
@@ -65,7 +65,7 @@ const Navbar = () => {
           >
             Sign Up
           </NavLink>
-        </div>
+        </div> */}
 
         
         <button
