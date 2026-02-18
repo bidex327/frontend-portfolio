@@ -93,7 +93,7 @@ const Navbar = () => {
             <li>
               <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink
                 to="/login"
                 onClick={() => setMenuOpen(false)}
@@ -101,8 +101,8 @@ const Navbar = () => {
               >
                 Login
               </NavLink>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <NavLink
                 to="/signup"
                 onClick={() => setMenuOpen(false)}
@@ -110,7 +110,7 @@ const Navbar = () => {
               >
                 Sign Up
               </NavLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       )}
