@@ -30,7 +30,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-sm text-gray-300 mb-3 font-extrabold text-9x1">
-              Website Developer
+              Software Developer
             </p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Hi, I'm <br />
