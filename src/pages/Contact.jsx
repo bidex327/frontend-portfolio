@@ -59,7 +59,7 @@ const Contact = () => {
       <div className="max-w-4xl mx-auto space-y-16">
 
         {/* ===== New Highlight Card ===== */}
-        <div className="bg-white border border-white rounded-2xl p-10 text-center shadow-lg transition hover:shadow-2xl">
+        <div className="bg-white border border-white/20 rounded-2xl p-10 text-center shadow-lg transition hover:shadow-2xl">
           <h1 className="text-4xl md:text-5xl font-semibold mb-4">Contact Me</h1>
           <h2 className="text-xl md:text-2xl font-medium mb-3">
             Looking for full-time, contract, or freelance work
