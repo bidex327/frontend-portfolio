@@ -7,7 +7,7 @@ const Projects = () => {
       title: "Gensler",
       description: "A simple, responsive website built with React.",
       image: gensler,
-      link: "https://gensler-1ula.vercel.app/#", // link to project
+      link: "https://gensler-m53g.vercel.app", // link to project
     },
     // Add more projects here
   ];
