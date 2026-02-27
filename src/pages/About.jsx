@@ -3,6 +3,7 @@ import {
   FaCss3Alt,
   FaJs,
   FaReact,
+  FaNodeJs
 } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript } from "react-icons/si";
 
@@ -111,8 +112,8 @@ const About = () => {
     </div>
 
     <div className="border border-cyan-400/40 rounded-xl p-6 flex flex-col items-center justify-center">
-      <SiTypescript className="text-4xl text-blue-400" />
-      <p className="text-sm text-gray-300 mt-3">TypeScript</p>
+      <FaNodeJs className="text-green-600 text-4xl" />
+      <p className="text-sm text-gray-300 mt-3">Nodejs</p>
     </div>
 
     <div className="border border-cyan-400/40 rounded-xl p-6 flex flex-col items-center justify-center">

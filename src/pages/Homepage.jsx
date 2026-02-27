@@ -30,7 +30,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-sm text-gray-300 mb-3 font-extrabold text-9x1">
-              Software Developer
+              Fullstack Web Developer
             </p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Hi, I'm <br />
@@ -70,16 +70,16 @@ const Home = () => {
 
             <div className="flex gap-12 mb-10">
               <div className="flex items-center">
-                <h2 className="text-6xl font-bold text-gray-300">2</h2>
+                <h2 className="text-6xl font-bold text-gray-300">1</h2>
                 <p className="text-sm text-gray-300">
-                  Years of <br /> experience
+                  Year of <br /> experience
                 </p>
               </div>
             </div>
 
-            <button className="bg-[#36535E] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2b454b] transition">
+            {/* <button className="bg-[#36535E] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2b454b] transition">
               Download CV
-            </button>
+            </button> */}
           </div>
 
           <div className="flex justify-center">

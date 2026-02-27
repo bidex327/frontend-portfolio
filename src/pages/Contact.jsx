@@ -74,12 +74,12 @@ const Contact = () => {
               Email Me
             </a>
 
-            <a
+            {/* <a
               href="#"
               className="bg-black/30 px-6 py-3 rounded-lg font-medium hover:bg-black/40 transition"
             >
               Schedule a Call
-            </a>
+            </a> */}
           </div>
 
           <p className="text-gray-200 text-sm">adebayobidemi36@gmail.com</p>
