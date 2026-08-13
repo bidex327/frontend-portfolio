@@ -53,12 +53,12 @@ const Contact = () => {
 
   return (
     <section className="min-h-screen bg-[#68727A] text-white px-6 py-20">
-      {/* Toast notifications */}
+      
       <ToastContainer position="top-right" autoClose={3000} />
 
       <div className="max-w-4xl mx-auto space-y-16">
 
-        {/* ===== New Highlight Card ===== */}
+        
         <div className="bg-[#5c666d] border border-white/20 rounded-2xl p-10 text-center shadow-lg transition hover:shadow-2xl">
           <h1 className="text-4xl md:text-5xl font-semibold mb-4">Contact Me</h1>
           <h2 className="text-xl md:text-2xl font-medium mb-3">
@@ -85,7 +85,7 @@ const Contact = () => {
           <p className="text-gray-200 text-sm">adebayobidemi36@gmail.com</p>
         </div>
 
-        {/* ===== Your Original Info Section (Social Links first) ===== */}
+  
         <div className="text-center space-y-8">
 
           <div>
@@ -109,7 +109,7 @@ const Contact = () => {
 
           <div>
             <h2 className="text-2xl font-medium mb-4">Connect with me</h2>
-            {/* ✅ Social <ul> */}
+          
             <ul className="space-y-2 text-gray-200">
               <li>GitHub: bidex327</li>
               <li>Twitter: @bidexsneh</li>
@@ -120,7 +120,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* ===== Contact Form LAST ===== */}
+      
         <div className="bg-[#5c666d] border border-white/20 rounded-2xl p-10 shadow-lg">
           <h2 className="text-3xl font-semibold mb-6 text-center">Send Me a Message</h2>
 

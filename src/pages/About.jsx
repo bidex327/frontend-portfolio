@@ -82,8 +82,7 @@ const About = () => {
 
         </div>
 
-        {/* ===== SKILLS SECTION (ADDED, NO COLOR CHANGES) ===== */}
-       {/* SKILLS */}
+      
 <div className="mt-24">
   <h3 className="text-center text-2xl md:text-3xl font-semibold mb-12 text-white">
     I have experience with the following technologies
@@ -124,7 +123,7 @@ const About = () => {
   </div>
 </div>
 
-        {/* ===== END SKILLS SECTION ===== */}
+   
 
       </div>
     </section>
