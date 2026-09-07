@@ -1,121 +1,105 @@
-import React from "react";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/logo.png";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../assets/logo.png";
+
+const navLinks = [
+  { to: "/", label: "Home", end: true },
+  { to: "/about", label: "About" },
+  { to: "/project", label: "Project" },
+  { to: "/contact", label: "Contact" },
+];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#36535E] text-[#68727A]">
-      <nav className="flex h-16 w-full items-center justify-between px-6">
-
-        
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="ABIDEX logo" className="h-20 w-auto" />
-          <span className="text-lg font-semibold text-white">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-brand-800/95 backdrop-blur-md">
+      <nav className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-6">
+        <div className="flex items-center gap-3">
+          <img src={logo} alt="ABIDEX logo" className="h-11 w-auto" />
+          <span className="font-display text-lg font-semibold tracking-wide text-white">
             ABIDEX WEBDEV
           </span>
         </div>
 
-      
-        <ul className="hidden items-center gap-8 md:flex">
-          <li>
-            <NavLink to="/" end className={({ isActive }) =>
-              isActive ? "text-white underline" : "text-gray-200 hover:text-white"
-            }>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" className={({ isActive }) =>
-              isActive ? "text-white underline" : "text-gray-200 hover:text-white"
-            }>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/project" className={({ isActive }) =>
-              isActive ? "text-white underline" : "text-gray-200 hover:text-white"
-            }>
-              Project
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact" className={({ isActive }) =>
-              isActive ? "text-white underline" : "text-gray-200 hover:text-white"
-            }>
-              Contact
-            </NavLink>
-          </li>
+        <ul className="hidden items-center gap-10 md:flex">
+          {navLinks.map(({ to, label, end }) => (
+            <li key={to}>
+              <NavLink
+                to={to}
+                end={end}
+                className={({ isActive }) =>
+                  `relative px-1 py-1 text-sm font-medium transition-colors duration-200 ${
+                    isActive ? "text-white" : "text-brand-200 hover:text-white"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    {label}
+                    <span
+                      className={`absolute -bottom-1.5 left-0 h-0.5 w-full origin-left rounded-full bg-accent-400 transition-transform duration-300 ${
+                        isActive ? "scale-x-100" : "scale-x-0"
+                      }`}
+                    />
+                  </>
+                )}
+              </NavLink>
+            </li>
+          ))}
         </ul>
 
-{/*         
-        <div className="hidden items-center gap-4 md:flex">
-          <NavLink
-            to="/login"
-            className="rounded-md bg-white px-4 py-2 text-[#68727A]"
-          >
-            Login
-          </NavLink>
-          <NavLink
-            to="/signup"
-            className="rounded-md bg-white px-4 py-2 text-[#68727A]"
-          >
-            Sign Up
-          </NavLink>
-        </div> */}
-
-        
         <button
           aria-label="Toggle menu"
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="text-white text-2xl md:hidden"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="rounded-md p-2 text-2xl text-white transition-colors hover:bg-white/10 md:hidden"
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </nav>
 
-      
-      {menuOpen && (
-        <div className="md:hidden bg-[#36535E] px-6 pb-6">
-          <ul className="flex flex-col gap-4 text-white">
-            <li>
-              <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about" onClick={() => setMenuOpen(false)}>About</NavLink>
-            </li>
-            <li>
-              <NavLink to="/project" onClick={() => setMenuOpen(false)}>Project</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
-            </li>
-            {/* <li>
-              <NavLink
-                to="/login"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-md bg-white px-4 py-2 text-[#68727A] text-center"
-              >
-                Login
-              </NavLink>
-            </li> */}
-            {/* <li>
-              <NavLink
-                to="/signup"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-md bg-white px-4 py-2 text-[#68727A] text-center"
-              >
-                Sign Up
-              </NavLink>
-            </li> */}
-          </ul>
-        </div>
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="overflow-hidden border-t border-white/10 bg-brand-800 md:hidden"
+          >
+            <ul className="flex flex-col gap-1 px-6 py-4">
+              {navLinks.map(({ to, label, end }) => (
+                <li key={to}>
+                  <NavLink
+                    to={to}
+                    end={end}
+                    onClick={() => setMenuOpen(false)}
+                    className={({ isActive }) =>
+                      `block rounded-lg px-3 py-3 text-base font-medium transition-colors ${
+                        isActive
+                          ? "bg-white/10 text-white"
+                          : "text-brand-200 hover:bg-white/5 hover:text-white"
+                      }`
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
 
 export default Navbar;
+
+
+
+
+
