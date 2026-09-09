@@ -58,7 +58,7 @@ const Home = () => {
               scale: [1, 0.9, 1.1, 1],
             }}
             transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-1/3 -right-32 h-[28rem] w-[28rem] rounded-full bg-brand-700/40 blur-3xl"
+            className="absolute top-1/3 -right-32 h-28rem w-md rounded-full bg-brand-700/40 blur-3xl"
           />
           <motion.div
             animate={{
@@ -136,7 +136,7 @@ const Home = () => {
               />
 
               {/* inner mask so only a ring shows, not a solid disc */}
-              <div className="absolute inset-[6px] rounded-full bg-brand-500" />
+              <div className="absolute inset-6px rounded-full bg-brand-500" />
 
               {/* glow */}
               <div className="absolute inset-0 rounded-full bg-accent-400/25 blur-2xl" />
